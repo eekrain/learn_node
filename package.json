@@ -1,0 +1,23 @@
+{
+  "name": "learn_node",
+  "version": "1.0.0",
+  "description": "Belajar node js dari kursus udemy",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eekrain/learn_node.git"
+  },
+  "author": "eekrain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eekrain/learn_node/issues"
+  },
+  "homepage": "https://github.com/eekrain/learn_node#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
