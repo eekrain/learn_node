@@ -1,0 +1,33 @@
+<%- include("./../includes/header.ejs") %>
+<%- include("./../includes/navbar.ejs") %>
+
+<main class="container mt-5">
+  <div class="row">
+    <% if(prods.length > 0) { %>
+
+    <% for(let product of prods) { %>
+    <div class="col-4 mb-4">
+      <div class="card" style="width: 18rem">
+        <img src="<%= product.imageUrl %>" class="card-img-top" alt="<%= product.title %>" />
+        <div class="card-body">
+          <h5 class="card-title text-capitalize"><%= product.title %></h5>
+          <p class="card-text">
+            <p class="text-justify"><%= product.description %></p>
+            <p class="text-center" style="font-size: 1.3rem; font-weight: bold;">
+
+              <%= ejs_util.rupiah.format(product.price) %>
+            </p>
+          </p>
+          <a href="#" class="btn btn-primary">Add to cart</a>
+        </div>
+      </div>
+    </div>
+    <% } %>
+
+    <% } else { %>
+    <h1>No products found!</h>
+      <% } %>
+  </div>
+</main>
+
+<%- include("./../includes/footer.ejs") %>

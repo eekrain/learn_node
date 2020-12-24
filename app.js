@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
+app.locals.ejs_util = require("./utils/ejs-util");
+
 app.set("view engine", "ejs");
 app.set("views", "views");
 
