@@ -1,4 +1,4 @@
-const products = [];
+const ProductModel = require("../models/product_model");
 
 exports.getAddProduct = (req, res, next) => {
   res.render("add-product", {
@@ -8,15 +8,18 @@ exports.getAddProduct = (req, res, next) => {
 };
 
 exports.postAddProduct = (req, res, next) => {
-  products.push({ title: req.body.title });
+  const product = new ProductModel(req.body.title);
+  product.save();
   res.redirect("/");
 };
 
 exports.getProducts = (req, res, next) => {
-  res.render("shop", {
-    pageTitle: "EKA SHOP | Shop",
-    prods: products,
-    path: "/",
-    hasProducts: products.length > 0,
+  ProductModel.fetchAll((products) => {
+    res.render("shop", {
+      pageTitle: "EKA SHOP | Shop",
+      prods: products,
+      path: "/",
+      hasProducts: products.length > 0,
+    });
   });
 };
