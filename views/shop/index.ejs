@@ -18,7 +18,11 @@
               <%= ejs_util.rupiah.format(product.price) %>
             </p>
           </p>
-          <a href="#" class="btn btn-primary">Add to cart</a>
+
+          <div class="d-flex justify-content-center">
+            <a href="/products/<%= product.id %> " class="btn btn-primary btn-sm mx-3">Details</a>
+            <%- include("./../includes/add-to-cart-btn.ejs", {product: product}) %>
+          </div>
         </div>
       </div>
     </div>

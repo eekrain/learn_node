@@ -1,0 +1,19 @@
+<%- include("./../includes/header.ejs") %>
+<%- include("./../includes/navbar.ejs") %>
+
+<main class="container mt-5">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h2 class="text-capitalize"><%= product.title %></h2>
+      <hr class="mt-2 mb-4">
+      <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
+      <p class="mt-2" style="font-weight: bold; font-size: 1.5rem;">
+        <%= ejs_util.rupiah.format(product.price) %>
+      </p>
+      <p class="mb-4"><%= product.description %> </p>
+      <%- include("./../includes/add-to-cart-btn.ejs") %>
+    </div>
+  </div>
+</main>
+
+<%- include("./../includes/footer.ejs") %>
